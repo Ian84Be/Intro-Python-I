@@ -28,13 +28,19 @@ a = (2, 7)   # <-- x,y coordinates stored in tuples
 b = (-14, 72)
 
 # Prints "Distance is 66.94"
-print("Distance is: {:.2f}".format(dist(a, b)))
+print("Distance is: {:.4f}".format(dist(a, b)))
 
 
 
 # Write a function `print_tuple` that prints all the values in a tuple
 
-# YOUR CODE HERE
+def print_tuple(t):
+	print(type(t))
+	if isinstance(t, int):
+		print(t)
+	else:
+		for i in t:
+			print(i)
 
 t = (1, 2, 5, 7, 99)
 print_tuple(t)  # Prints 1 2 5 7 99, one per line
