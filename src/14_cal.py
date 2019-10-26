@@ -22,3 +22,20 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+myArgs = [int(a) for a in sys.argv[1:]]
+
+if len(myArgs) == 0:
+	thisMonth = datetime.now().month
+	thisYear = datetime.now().year
+	print(calendar.month(thisYear, thisMonth))
+elif len(myArgs) == 1:
+	thisMonth = myArgs[0]
+	thisYear = datetime.now().year
+	print(calendar.month(thisYear, thisMonth))
+elif len(myArgs) == 2:
+	thisMonth = myArgs[0]
+	thisYear = myArgs[1]
+	print(calendar.month(thisYear, thisMonth))
+else:
+	sys.exit('ERROR: expected input >> 14_cal.py int(month) [int(year)] ')
