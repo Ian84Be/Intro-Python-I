@@ -5,13 +5,10 @@ num = int(sys.argv[1])
 if num < 1: sys.exit('ERROR: input must be integer > 0')
 
 sifted = sieve(num)
-# print('16_isprime sifted',sifted)
-
 if num in sifted:
 	isPrime = True
 else: isPrime = False
 print(f'{num} isPrime ? {isPrime}')
-
 
 # myNaive implementation
 # def isPrime(num):
