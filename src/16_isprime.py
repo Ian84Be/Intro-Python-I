@@ -1,5 +1,7 @@
 import sys
+from decorators import timer
 
+@timer
 def sieve(num: int) -> list:
 	primes = 2*[False] + (num-1)*[True]
 	sqr = int(num**0.5+1.5) # max out at sqrt of num
@@ -15,10 +17,12 @@ if num < 1: sys.exit('ERROR: input must be integer > 0')
 sifted = sieve(num)
 if num in sifted:
 	isPrime = True
-else: isPrime = False
+else: 
+	isPrime = False
 print(f'{num} isPrime ? {isPrime}')
 
-# myNaive implementation
+# # myNaive implementation
+# @timer
 # def isPrime(num):
 # 	if num < 2:
 # 		return False
